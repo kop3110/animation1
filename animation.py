@@ -32,6 +32,7 @@ class Scatter_animation(object):
 		self.ani = animation.FuncAnimation(self.fig, self.update, interval=10,init_func=self.setup_plot, blit=True,repeat=False)
 		random.seed()
 		self.first = sleep
+		#dhmioyrgia axonwn
 	def setup_plot(self):
 		self.ax.axis([-1, self.xronos+1, -self.y*2.1, self.y*2.1])
 		self.scat = self.ax.scatter(self.xwork, self.ywork, c="RED", s=5, animated=True)

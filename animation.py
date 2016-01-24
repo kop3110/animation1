@@ -20,20 +20,21 @@ class Scatter_animation(object):
 		self.y4 = (1-self.x1*self.x1)**(1/2)
 		self.y5=np.cos(self.x1)*np.sin(self.x1)
 		self.y6=np.cos(self.x1)*np.sin(self.x1)/(np.cos(self.x1)-np.sin(self.x1))
-		self.y7=1-np.sin(self.x2)
+		self.y7=1-np.cos(self.x2)
 		self.xwork = np.copy(self.x1)
 		self.ywork = np.copy(self.y1)
 		self.mode = 1
 		self.ylist = [(self.x1, self.y1), (self.x1, self.y2), (self.x1, self.y3),(self.x1, self.y5),(self.x2, self.y7)]
 		self.clist = [1, 1, 0.2,0.1,0.15]
 		self.fig = pyplot.figure()
-		self.ax = self.fig.add_subplot(111)
+		colors = ["red", "orange", "yellow", "green", "blue", "violet"]
+		self.ax = self.fig.add_subplot(111,axisbg=random.choice(colors))
 		self.ani = animation.FuncAnimation(self.fig, self.update, interval=10,init_func=self.setup_plot, blit=True,repeat=False)
 		random.seed()
 		self.first = sleep
 	def setup_plot(self):
-		self.ax.axis([-1, self.xronos+1, -self.y*1.1, self.y*1.1])
-		self.scat = self.ax.scatter(self.xwork, self.ywork, c="RED", s=100, animated=True)
+		self.ax.axis([-1, self.xronos+1, -self.y*2.1, self.y*2.1])
+		self.scat = self.ax.scatter(self.xwork, self.ywork, c="RED", s=5, animated=True)
 		self.ax.set_title("TEAM 7 ANIMATION",fontsize=14)
 		pyplot.style.use('ggplot')
 		return self.scat,  

@@ -49,6 +49,7 @@ class Scatter(object):
         return self.scat,
 
 if __name__ == '__main__':
+    # Interval draws a new frame every 10 milliseconds
     a = Scatter()
     c=os.path.expanduser('~//public_html')
     a.ani.save(c+"//basic_animation5.mp4", fps=10)

@@ -4,6 +4,7 @@ import numpy as np
 import random
 import os
 
+#omada7-lakiotis klimis,mpessa anastasia,pittas konstantinos,stasinoulias dimitris
 
 class Scatter(object):
     def __init__(self, shmeia=80):
